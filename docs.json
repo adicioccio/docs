@@ -63,7 +63,7 @@
       },
       {
         "tab": "API reference",
-        "openapi": "api-reference/cryptoworth.json",
+        "openapi": "api-reference/cw_openapi.json",
         "groups": [
           {
             "group": "API documentation",
