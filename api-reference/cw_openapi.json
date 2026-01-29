@@ -1,0 +1,2490 @@
+openapi: 3.0.0
+info:
+  title: Cryptoworth Portfolio Private API
+  description: >-
+    Cryptoworth's Private Portfolio API. You can use this API to query data from
+    your portfolio. Please see the help center articles
+    (https://help.cryptoworth.app)  for more support or contact using the link
+    below for additional support. This API can only be used by registered
+    business users. <br/> <br/> Download the postman collection
+    https://api.cryptoworth.app/docs/Cryptoworth%20Private%20API.postman_collection.json
+
+
+    Contact Support:
+     Email: support@cryptoworth.app
+  version: 1.0.0
+servers:
+  - url: http://{{baseurl}}
+tags:
+  - name: Transactions
+  - name: Connections
+  - name: Snapshots
+  - name: Classifications
+  - name: DeFi
+  - name: NFTs
+  - name: Labels
+  - name: Calculations
+  - name: Invoices
+  - name: Bills
+paths:
+  /transactions:
+    get:
+      tags:
+        - Transactions
+      summary: List Transactions
+      description: |
+        Get all portfolio transactions
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: 07ed01fbe0ab4b77bacad9d704d72f2c
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '4423'
+        - name: Content-Type
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: offset
+          in: query
+          schema:
+            type: integer
+          description: pagination offset
+          example: '8805'
+        - name: size
+          in: query
+          schema:
+            type: integer
+          description: number of records per call
+          example: '5560'
+        - name: startDate
+          in: query
+          schema:
+            type: integer
+          description: >-
+            pass a start date in unix millisecond format to query transactions
+            equal or after this date
+          example: '8805'
+        - name: endDate
+          in: query
+          schema:
+            type: integer
+          description: >-
+            pass a start date in unix millisecond format to query transactions
+            equal or before this date
+          example: '8805'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data:
+                  - cost: 107.2403
+                    created_at_unix: 1510872881000
+                    crypto_id: 4217
+                    desc: Final gatehub transfer
+                    from_dest: rPujGTiwMnKmMbAiUT6UjpFxT9ArDn1kJP
+                    from_dest_name: Binance (XRP) Wallet
+                    id: 1
+                    in_amount: 363.526411
+                    in_crypto: XRP
+                    label: gatehub
+                    out_amount: 363.526411
+                    out_crypto: XRP
+                    sale_price: 170.2403
+                    sync_identifier: XRP Wallet
+                    sync_source: public address
+                    sync_source_name: Binance
+                    tag_type: deposit
+                    to_dest: rwawh2ft7uNopY93rCqykubebnWAn3VJY3
+                    to_dest_name: Gatehub Wallet
+                    transaction_fee: 0.000015
+                    transaction_fee_type: string
+                    transaction_type: send
+                    tx_id: >-
+                      AB3EC5C924EB1284F87BEA15E5C05077941C6C6ENN808072K526EDC7EC94745C
+                  - cost: 107.2403
+                    created_at_unix: 1510872881000
+                    crypto_id: 8551
+                    desc: Final gatehub transfer
+                    from_dest: rPujGTiwMnKmMbAiUT6UjpFxT9ArDn1kJP
+                    from_dest_name: Binance (XRP) Wallet
+                    id: 1
+                    in_amount: 363.526411
+                    in_crypto: XRP
+                    label: gatehub
+                    out_amount: 363.526411
+                    out_crypto: XRP
+                    sale_price: 170.2403
+                    sync_identifier: XRP Wallet
+                    sync_source: public address
+                    sync_source_name: Binance
+                    tag_type: deposit
+                    to_dest: rwawh2ft7uNopY93rCqykubebnWAn3VJY3
+                    to_dest_name: Gatehub Wallet
+                    transaction_fee: 0.000015
+                    transaction_fee_type: string
+                    transaction_type: send
+                    tx_id: >-
+                      AB3EC5C924EB1284F87BEA15E5C05077941C6C6ENN808072K526EDC7EC94745C
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /transaction_meta:
+    get:
+      tags:
+        - Transactions
+      summary: Read Transaction
+      description: |
+        Get vanilla information about the transaction 
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: transactionId
+          in: query
+          schema:
+            type: integer
+          description: internal transaction ledger id
+          example: '8805'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data:
+                  - blockNumber: '0000'
+                    timeStamp: '0000'
+                    hash: '0x0000000'
+                    nonce: xrp.png
+                    blockHash: '0x0000000'
+                    from: '0x00000'
+                    to: '0x00000'
+                  - blockNumber: '0000'
+                    timeStamp: '0000'
+                    hash: '0x0000000'
+                    nonce: xrp.png
+                    blockHash: '0x0000000'
+                    from: '0x00000'
+                    to: '0x00000'
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /transactions_add:
+    post:
+      tags:
+        - Transactions
+      summary: get Transactions Add
+      description: Add transactions to the portfolio directly.
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /txns_manual_add:
+    post:
+      tags:
+        - Transactions
+      summary: portfolio Manual Txns Create
+      description: >-
+        Add a manual transaction to the portfolio. <b>API details secluded for
+        security reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /connection_wallet_add:
+    post:
+      tags:
+        - Connections
+      summary: connect Wallet
+      description: >-
+        Connect a wallet via a public address to a portfolio. <b>API details
+        secluded for security reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /connection_account_add:
+    post:
+      tags:
+        - Connections
+      summary: connect Accounts
+      description: >-
+        Connect a wallet via a public address to a portfolio. <b>API details
+        secluded for security reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /wallets:
+    get:
+      tags:
+        - Connections
+      summary: list wallets
+      description: >
+        Get all the live wallets in a portfolio. Live wallets include wallets
+        connected through public addresses and wallets (xPubs, yPubs and zPubs)
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data:
+                  - address: rrawh2Vt7uNopY94rCqgjubefnEDn3CJYE
+                    display_symbol: XRP
+                    id: 1
+                    image: xrp.png
+                    name: My XRP Wallet
+                    type: Ripple
+                    w_desc: My gatehub wallet
+                  - address: rrawh2Vt7uNopY94rCqgjubefnEDn3CJYE
+                    display_symbol: XRP
+                    id: 1
+                    image: xrp.png
+                    name: My XRP Wallet
+                    type: Ripple
+                    w_desc: My gatehub wallet
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /sync_portfolio_connections:
+    get:
+      tags:
+        - Connections
+      summary: sync All
+      description: Begin sync operations across a portfolio.
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: mode
+          in: query
+          schema:
+            type: string
+          description: >-
+            Defined the scope of the jobs to queue. ['all', 'wallets', or
+            'exchanges']
+          example: string
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /snapshots:
+    get:
+      tags:
+        - Snapshots
+      summary: get Snapshots
+      description: Get snapshot summmary details
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: startDate
+          in: query
+          schema:
+            type: string
+          description: date format YYYY-MM-DD
+          example: string
+        - name: endDate
+          in: query
+          schema:
+            type: string
+          description: date format YYYY-MM-DD
+          example: string
+        - name: page
+          in: query
+          schema:
+            type: number
+          description: page number, default 1
+          example: '3668.277565660176'
+        - name: size
+          in: query
+          schema:
+            type: number
+          description: page size default 100
+          example: '96.93080000552878'
+        - name: order
+          in: query
+          schema:
+            type: string
+          description: '''asc'' or ''desc'', default ''asc'''
+          example: asc
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data:
+                  - snapshot_time: '12:48:00'
+                    snapshot_time_zone: UTC+05:30
+                    total: 0.181
+                    snapshot_date: '2022-03-24'
+                    fmv_market_code: $__USD
+                  - snapshot_time: '12:48:00'
+                    snapshot_time_zone: UTC+05:30
+                    total: 0.181
+                    snapshot_date: '2022-03-24'
+                    fmv_market_code: $__USD
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /snapshots_details:
+    get:
+      tags:
+        - Snapshots
+      summary: get Snapshot Info Details
+      description: Get snapshot Info details
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: date
+          in: query
+          schema:
+            type: string
+          description: snapshot date
+          example: string
+        - name: time
+          in: query
+          schema:
+            type: string
+          description: snapshot time
+          example: string
+        - name: mode
+          in: query
+          schema:
+            type: string
+          description: '''asset'', ''wallet'',''connection'' or ''derivatives'''
+          example: asset
+        - name: cryptoId
+          in: query
+          schema:
+            type: integer
+          description: crypto Id
+          example: '8805'
+        - name: type
+          in: query
+          schema:
+            type: integer
+          description: 'type - 1: wallets, 2: accounts'
+          example: '1'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data:
+                  details:
+                    - connection_name: 'gemini: ETH'
+                      source_id: 1
+                      type: 1
+                      fmv_source: 1
+                      crypto_id: 1
+                      balance: 1.11
+                      fiat_value: 0.11
+                    - connection_name: 'gemini: ETH'
+                      source_id: 1
+                      type: 1
+                      fmv_source: 1
+                      crypto_id: 1
+                      balance: 1.11
+                      fiat_value: 0.11
+                  meta:
+                    date: '2022-04-07'
+                    types:
+                      '1': wallet
+                      '2': exchange
+                      '3': virtual wallet
+                      '4': de-fi
+                    fmv_sources:
+                      '1': CryptoCompare
+                      '2': CoinGecko
+                    cryptoSymbols:
+                      '1':
+                        symbol: BTC
+                        display_symbol: BTC
+                        name: Bitcoin
+                      '2':
+                        symbol: ETH
+                        display_symbol: ETH
+                        name: Ethereum
+                  defi:
+                    protocols:
+                      Ethereum:
+                        network: string
+                        networkImage: string
+                        protocols:
+                          aave:
+                            protocol_id: Ethereum
+                            total_balance: 70672.836
+                            asset_balance: 70672.836
+                            debt_balance: 0
+                            crypto_name: Ethereum
+                            crypto_image: eth.png
+                            wallet_type_id: 1
+                            protocol_name: Aave
+                            reporting_code: USD
+                            conversion_multiple: 1
+                            protocol_logo: aave.png
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /snapshots_info:
+    get:
+      tags:
+        - Snapshots
+      summary: get Snapshot Info
+      description: Get snapshot information
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: date
+          in: query
+          schema:
+            type: string
+          description: snapshot date
+          example: string
+        - name: time
+          in: query
+          schema:
+            type: string
+          description: snapshot time
+          example: string
+        - name: mode
+          in: query
+          schema:
+            type: string
+          description: one of value, 'asset' or 'connection'
+          example: connection
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data:
+                  asset:
+                    fiat_value: 0.11
+                    crypto_id: 1
+                    fmv_market_code: $__USD
+                    snapshot_date: '2022-04-07'
+                    fmv_source: 1
+                    balance: 333333
+                    fmv_value: 2.56
+                  wallets:
+                    hs_wallet_id: 1
+                    cryptoId: 1
+                    source_id: 1
+                    wallet_id: 1
+                    total: 0.11
+                    name: my eth wallet
+                  exchanges:
+                    exchange_connection_id: 1
+                    total: 11.111
+                    connection_name: gemini account
+                    exchange_name: Gemini
+                    exchange_id: 8
+                  meta:
+                    date: '2022-04-07'
+                    types:
+                      '1': wallet
+                      '2': exchange
+                      '3': virtual wallet
+                      '4': de-fi
+                    fmv_sources:
+                      '1': CryptoCompare
+                      '2': CoinGecko
+                    cryptoSymbols:
+                      '1':
+                        symbol: BTC
+                        display_symbol: BTC
+                        name: Bitcoin
+                      '2':
+                        symbol: ETH
+                        display_symbol: ETH
+                        name: Ethereum
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /classifications_add:
+    post:
+      tags:
+        - Classifications
+      summary: classifications Add
+      description: >-
+        Create classifications for the portfolio . <b>API details secluded for
+        security reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /classifications_edit:
+    post:
+      tags:
+        - Classifications
+      summary: classifications Edit
+      description: >-
+        Edit classification in a portfolio . <b>API details secluded for
+        security reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /classifications_delete:
+    post:
+      tags:
+        - Classifications
+      summary: classifications Delete
+      description: >-
+        Delete a classification from the portfolio . <b>API details secluded for
+        security reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /txns_classification_assign:
+    post:
+      tags:
+        - Classifications
+      summary: portfolio Classification Assign Txns
+      description: >-
+        Assign a classification to a transaction in the portfolio. <b>API
+        details secluded for security reasons. Please contact your account
+        manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /defi_portfolio_info:
+    get:
+      tags:
+        - DeFi
+      summary: defi Portfolio Info
+      description: >-
+        Get portfolio DeFi infomation. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /defi_portfolio_protocol_info:
+    get:
+      tags:
+        - DeFi
+      summary: defi Specific Portfolio Info
+      description: >-
+        Get DeFi protocol specific infomation. <b>API details secluded for
+        security reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /defi_portfolio_refresh:
+    get:
+      tags:
+        - DeFi
+      summary: defi Portfolio Refresh
+      description: >-
+        Refresh portfolio DeFi infomation. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /defi_portfolio_hard_refresh:
+    get:
+      tags:
+        - DeFi
+      summary: defi Portfolio Refresh Hard
+      description: >-
+        Resync portfolio DeFi infomation. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /nfts_portfolio_all:
+    post:
+      tags:
+        - NFTs
+      summary: NFT Portfolio All
+      description: >-
+        Get all NFTs in a portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /nfts_portfolio_specific:
+    get:
+      tags:
+        - NFTs
+      summary: NFT Portfolio Specific
+      description: >-
+        Get specific NFT info in a portfolio. <b>API details secluded for
+        security reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /nfts_portfolio_search:
+    get:
+      tags:
+        - NFTs
+      summary: NFT Portfolio Search
+      description: >-
+        Search for NFT info in a portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /nfts_portfolio_txns:
+    get:
+      tags:
+        - NFTs
+      summary: NFT Portfolio Txns
+      description: >-
+        Get all transactions for a NFT in a portfolio. <b>API details secluded
+        for security reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /library_labels:
+    get:
+      tags:
+        - Labels
+      summary: portfolio Labels
+      description: >-
+        Get all labels in a portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /library_labels_create:
+    post:
+      tags:
+        - Labels
+      summary: portfolio Labels Create
+      description: >-
+        Create labels in a portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /library_labels_update:
+    post:
+      tags:
+        - Labels
+      summary: portfolio Labels Update
+      description: >-
+        Update labels in a portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /library_labels_delete:
+    post:
+      tags:
+        - Labels
+      summary: portfolio Labels Delete
+      description: >-
+        Delete labels in a portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /txns_label_edit:
+    post:
+      tags:
+        - Labels
+      summary: portfolio Txns Label Edit
+      description: >-
+        Edit a transaction's label and description in the portfolio. <b>API
+        details secluded for security reasons. Please contact your account
+        manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /calculation_execute:
+    post:
+      tags:
+        - Calculations
+      summary: portfolio Calculate
+      description: >-
+        Run a calculation (ie: Cost basis, WAC etc) in the portfolio. <b>API
+        details secluded for security reasons. Please contact your account
+        manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /calculation_cancel:
+    post:
+      tags:
+        - Calculations
+      summary: portfolio Calculate Cancel
+      description: >-
+        Cancel a running calculation (ie: Cost basis, WAC etc) in the portfolio.
+        <b>API details secluded for security reasons. Please contact your
+        account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /invoice_create:
+    post:
+      tags:
+        - Invoices
+      summary: portfolio Invoice Create
+      description: >-
+        Create an invoice in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /invoices_get:
+    get:
+      tags:
+        - Invoices
+      summary: portfolio Invoice Get
+      description: >-
+        Get all invoices in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /invoice_next_id:
+    get:
+      tags:
+        - Invoices
+      summary: portfolio Invoice Get New Id
+      description: >-
+        Get the next invoice Id in the portfolio. Use this id to create the
+        invoice new. <b>API details secluded for security reasons. Please
+        contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /invoice_tokens_supported:
+    get:
+      tags:
+        - Invoices
+      summary: portfolio Invoice Currencies
+      description: >-
+        Get a list of supported currencies for invoices in your portfolio.
+        <b>API details secluded for security reasons. Please contact your
+        account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /invoice_accept:
+    post:
+      tags:
+        - Invoices
+      summary: portfolio Invoice Accept
+      description: >-
+        Accept an invoice in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /invoice_reject:
+    post:
+      tags:
+        - Invoices
+      summary: portfolio Invoice Reject
+      description: >-
+        Reject an invoice in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /invoice_cancel:
+    post:
+      tags:
+        - Invoices
+      summary: portfolio Invoice Cancel
+      description: >-
+        Cancel an invoice in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /bills_get:
+    get:
+      tags:
+        - Bills
+      summary: portfolio Bills Get
+      description: >-
+        Get bills in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /bill_get:
+    get:
+      tags:
+        - Bills
+      summary: portfolio Bill Get
+      description: >-
+        Get a specific bill in the portfolio. <b>API details secluded for
+        security reasons. Please contact your account manager. <b/>
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /bill_create:
+    post:
+      tags:
+        - Bills
+      summary: portfolio Bill Create
+      description: >-
+        Create a bill in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /bill_confirm:
+    post:
+      tags:
+        - Bills
+      summary: portfolio Bill Confirm
+      description: >-
+        Confirm a bill in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /bill_delete:
+    post:
+      tags:
+        - Bills
+      summary: portfolio Bill Delete
+      description: >-
+        Delete a bill in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /bill_unconfirm:
+    post:
+      tags:
+        - Bills
+      summary: portfolio Bill Unconfirm
+      description: >-
+        Unconfirm a bill in the portfolio. <b>API details secluded for security
+        reasons. Please contact your account manager. <b/>
+      requestBody:
+        content: {}
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data: true
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
+  /crypto_library:
+    get:
+      tags:
+        - default
+      summary: Get Crypto Library
+      description: Get a list of supported assets and its info.
+      parameters:
+        - name: X-API-KEY
+          in: header
+          schema:
+            type: string
+          description: Pass your API KEY here
+          example: string
+        - name: X-PORTFOLIO-ID
+          in: header
+          schema:
+            type: integer
+          description: Pass your portfolio ID
+          example: '8805'
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+        - name: Crypto Id
+          in: query
+          schema:
+            type: integer
+          description: Unique identifier for the cryptocurrency
+          example: '8805'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                status: true
+                data:
+                  - ''
+                  - ''
+        '401':
+          description: Unauthorized
+          content:
+            text/plain:
+              schema:
+                type: string
+              example: ''
