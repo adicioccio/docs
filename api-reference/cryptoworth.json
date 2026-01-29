@@ -1,0 +1,5288 @@
+{
+  "info": {
+    "_postman_id": "ad4b0f39-8646-4a44-90de-ac706726061c",
+    "name": "Cryptoworth Portfolio Private API",
+    "description": "Cryptoworth's Private Portfolio API. You can use this API to query data from your portfolio. Please see the help center articles (https://help.cryptoworth.app)  for more support or contact using the link below for additional support. This API can only be used by registered business users. <br/> <br/> Download the postman collection https://api.cryptoworth.app/docs/Cryptoworth%20Private%20API.postman_collection.json\n\nContact Support:\n Email: support@cryptoworth.app",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51290378",
+    "_collection_link": "https://go.postman.co/collection/51290378-ad4b0f39-8646-4a44-90de-ac706726061c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Transactions",
+      "item": [
+        {
+          "name": "List Transactions",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "07ed01fbe0ab4b77bacad9d704d72f2c",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "4423",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/transactions?offset=8805&size=5560&startDate=8805&endDate=8805",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "transactions"
+              ],
+              "query": [
+                {
+                  "key": "offset",
+                  "value": "8805",
+                  "description": "pagination offset"
+                },
+                {
+                  "key": "size",
+                  "value": "5560",
+                  "description": "number of records per call"
+                },
+                {
+                  "key": "startDate",
+                  "value": "8805",
+                  "description": "pass a start date in unix millisecond format to query transactions equal or after this date"
+                },
+                {
+                  "key": "endDate",
+                  "value": "8805",
+                  "description": "pass a start date in unix millisecond format to query transactions equal or before this date"
+                }
+              ]
+            },
+            "description": "Get all portfolio transactions\n"
+          },
+          "response": [
+            {
+              "name": "successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/transactions?offset=8805&size=5560&startDate=8805&endDate=8805",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "transactions"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "8805",
+                      "description": "pagination offset"
+                    },
+                    {
+                      "key": "size",
+                      "value": "5560",
+                      "description": "number of records per call"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "8805",
+                      "description": "pass a start date in unix millisecond format to query transactions equal or after this date"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "8805",
+                      "description": "pass a start date in unix millisecond format to query transactions equal or before this date"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": [\n    {\n      \"cost\": 107.2403,\n      \"created_at_unix\": 1510872881000,\n      \"crypto_id\": 4217,\n      \"desc\": \"Final gatehub transfer\",\n      \"from_dest\": \"rPujGTiwMnKmMbAiUT6UjpFxT9ArDn1kJP\",\n      \"from_dest_name\": \"Binance (XRP) Wallet\",\n      \"id\": 1,\n      \"in_amount\": 363.526411,\n      \"in_crypto\": \"XRP\",\n      \"label\": \"gatehub\",\n      \"out_amount\": 363.526411,\n      \"out_crypto\": \"XRP\",\n      \"sale_price\": 170.2403,\n      \"sync_identifier\": \"XRP Wallet\",\n      \"sync_source\": \"public address\",\n      \"sync_source_name\": \"Binance\",\n      \"tag_type\": \"deposit\",\n      \"to_dest\": \"rwawh2ft7uNopY93rCqykubebnWAn3VJY3\",\n      \"to_dest_name\": \"Gatehub Wallet\",\n      \"transaction_fee\": 0.000015,\n      \"transaction_fee_type\": \"string\",\n      \"transaction_type\": \"send\",\n      \"tx_id\": \"AB3EC5C924EB1284F87BEA15E5C05077941C6C6ENN808072K526EDC7EC94745C\"\n    },\n    {\n      \"cost\": 107.2403,\n      \"created_at_unix\": 1510872881000,\n      \"crypto_id\": 8551,\n      \"desc\": \"Final gatehub transfer\",\n      \"from_dest\": \"rPujGTiwMnKmMbAiUT6UjpFxT9ArDn1kJP\",\n      \"from_dest_name\": \"Binance (XRP) Wallet\",\n      \"id\": 1,\n      \"in_amount\": 363.526411,\n      \"in_crypto\": \"XRP\",\n      \"label\": \"gatehub\",\n      \"out_amount\": 363.526411,\n      \"out_crypto\": \"XRP\",\n      \"sale_price\": 170.2403,\n      \"sync_identifier\": \"XRP Wallet\",\n      \"sync_source\": \"public address\",\n      \"sync_source_name\": \"Binance\",\n      \"tag_type\": \"deposit\",\n      \"to_dest\": \"rwawh2ft7uNopY93rCqykubebnWAn3VJY3\",\n      \"to_dest_name\": \"Gatehub Wallet\",\n      \"transaction_fee\": 0.000015,\n      \"transaction_fee_type\": \"string\",\n      \"transaction_type\": \"send\",\n      \"tx_id\": \"AB3EC5C924EB1284F87BEA15E5C05077941C6C6ENN808072K526EDC7EC94745C\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/transactions?offset=8805&size=5560&startDate=8805&endDate=8805",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "transactions"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "8805",
+                      "description": "pagination offset"
+                    },
+                    {
+                      "key": "size",
+                      "value": "5560",
+                      "description": "number of records per call"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "8805",
+                      "description": "pass a start date in unix millisecond format to query transactions equal or after this date"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "8805",
+                      "description": "pass a start date in unix millisecond format to query transactions equal or before this date"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Read Transaction",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/transaction_meta?transactionId=8805",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "transaction_meta"
+              ],
+              "query": [
+                {
+                  "key": "transactionId",
+                  "value": "8805",
+                  "description": "internal transaction ledger id"
+                }
+              ]
+            },
+            "description": "Get vanilla information about the transaction \n"
+          },
+          "response": [
+            {
+              "name": "successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/transaction_meta?transactionId=8805",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "transaction_meta"
+                  ],
+                  "query": [
+                    {
+                      "key": "transactionId",
+                      "value": "8805",
+                      "description": "internal transaction ledger id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": [\n    {\n      \"blockNumber\": \"0000\",\n      \"timeStamp\": \"0000\",\n      \"hash\": \"0x0000000\",\n      \"nonce\": \"xrp.png\",\n      \"blockHash\": \"0x0000000\",\n      \"from\": \"0x00000\",\n      \"to\": \"0x00000\"\n    },\n    {\n      \"blockNumber\": \"0000\",\n      \"timeStamp\": \"0000\",\n      \"hash\": \"0x0000000\",\n      \"nonce\": \"xrp.png\",\n      \"blockHash\": \"0x0000000\",\n      \"from\": \"0x00000\",\n      \"to\": \"0x00000\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/transaction_meta?transactionId=8805",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "transaction_meta"
+                  ],
+                  "query": [
+                    {
+                      "key": "transactionId",
+                      "value": "8805",
+                      "description": "internal transaction ledger id"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "get Transactions Add",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/transactions_add",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "transactions_add"
+              ]
+            },
+            "description": "Add transactions to the portfolio directly."
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/transactions_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "transactions_add"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/transactions_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "transactions_add"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Manual Txns Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/txns_manual_add",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "txns_manual_add"
+              ]
+            },
+            "description": "Add a manual transaction to the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/txns_manual_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "txns_manual_add"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/txns_manual_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "txns_manual_add"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Connections",
+      "item": [
+        {
+          "name": "connect Wallet",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/connection_wallet_add",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connection_wallet_add"
+              ]
+            },
+            "description": "Connect a wallet via a public address to a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/connection_wallet_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connection_wallet_add"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/connection_wallet_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connection_wallet_add"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "connect Accounts",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/connection_account_add",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "connection_account_add"
+              ]
+            },
+            "description": "Connect a wallet via a public address to a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/connection_account_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connection_account_add"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/connection_account_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "connection_account_add"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "list wallets",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/wallets",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "wallets"
+              ],
+              "query": [
+                {
+                  "key": "offset",
+                  "value": "string",
+                  "description": "pass an optional search string for looking up inventory",
+                  "disabled": true
+                },
+                {
+                  "key": "skip",
+                  "value": "61",
+                  "description": "number of records to skip for pagination",
+                  "disabled": true
+                }
+              ]
+            },
+            "description": "Get all the live wallets in a portfolio. Live wallets include wallets connected through public addresses and wallets (xPubs, yPubs and zPubs)\n"
+          },
+          "response": [
+            {
+              "name": "successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/wallets?offset=string&skip=61",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "wallets"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "string",
+                      "description": "pass an optional search string for looking up inventory"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "61",
+                      "description": "number of records to skip for pagination"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": [\n    {\n      \"address\": \"rrawh2Vt7uNopY94rCqgjubefnEDn3CJYE\",\n      \"display_symbol\": \"XRP\",\n      \"id\": 1,\n      \"image\": \"xrp.png\",\n      \"name\": \"My XRP Wallet\",\n      \"type\": \"Ripple\",\n      \"w_desc\": \"My gatehub wallet\"\n    },\n    {\n      \"address\": \"rrawh2Vt7uNopY94rCqgjubefnEDn3CJYE\",\n      \"display_symbol\": \"XRP\",\n      \"id\": 1,\n      \"image\": \"xrp.png\",\n      \"name\": \"My XRP Wallet\",\n      \"type\": \"Ripple\",\n      \"w_desc\": \"My gatehub wallet\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/wallets?offset=string&skip=61",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "wallets"
+                  ],
+                  "query": [
+                    {
+                      "key": "offset",
+                      "value": "string",
+                      "description": "pass an optional search string for looking up inventory"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "61",
+                      "description": "number of records to skip for pagination"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "sync All",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/sync_portfolio_connections?mode=string",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "sync_portfolio_connections"
+              ],
+              "query": [
+                {
+                  "key": "mode",
+                  "value": "string",
+                  "description": "Defined the scope of the jobs to queue. ['all', 'wallets', or 'exchanges']"
+                }
+              ]
+            },
+            "description": "Begin sync operations across a portfolio."
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sync_portfolio_connections?mode=string",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sync_portfolio_connections"
+                  ],
+                  "query": [
+                    {
+                      "key": "mode",
+                      "value": "string",
+                      "description": "Defined the scope of the jobs to queue. ['all', 'wallets', or 'exchanges']"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/sync_portfolio_connections?mode=string",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "sync_portfolio_connections"
+                  ],
+                  "query": [
+                    {
+                      "key": "mode",
+                      "value": "string",
+                      "description": "Defined the scope of the jobs to queue. ['all', 'wallets', or 'exchanges']"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Snapshots",
+      "item": [
+        {
+          "name": "get Snapshots",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/snapshots?startDate=string&endDate=string&page=3668.277565660176&size=96.93080000552878&order=asc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "snapshots"
+              ],
+              "query": [
+                {
+                  "key": "startDate",
+                  "value": "string",
+                  "description": "date format YYYY-MM-DD"
+                },
+                {
+                  "key": "endDate",
+                  "value": "string",
+                  "description": "date format YYYY-MM-DD"
+                },
+                {
+                  "key": "page",
+                  "value": "3668.277565660176",
+                  "description": "page number, default 1"
+                },
+                {
+                  "key": "size",
+                  "value": "96.93080000552878",
+                  "description": "page size default 100"
+                },
+                {
+                  "key": "order",
+                  "value": "asc",
+                  "description": "'asc' or 'desc', default 'asc'"
+                }
+              ]
+            },
+            "description": "Get snapshot summmary details"
+          },
+          "response": [
+            {
+              "name": "successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/snapshots?startDate=string&endDate=string&page=3668.277565660176&size=96.93080000552878&order=asc",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "snapshots"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "string",
+                      "description": "date format YYYY-MM-DD"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "string",
+                      "description": "date format YYYY-MM-DD"
+                    },
+                    {
+                      "key": "page",
+                      "value": "3668.277565660176",
+                      "description": "page number, default 1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "96.93080000552878",
+                      "description": "page size default 100"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc",
+                      "description": "'asc' or 'desc', default 'asc'"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": [\n    {\n      \"snapshot_time\": \"12:48:00\",\n      \"snapshot_time_zone\": \"UTC+05:30\",\n      \"total\": 0.181,\n      \"snapshot_date\": \"2022-03-24\",\n      \"fmv_market_code\": \"$__USD\"\n    },\n    {\n      \"snapshot_time\": \"12:48:00\",\n      \"snapshot_time_zone\": \"UTC+05:30\",\n      \"total\": 0.181,\n      \"snapshot_date\": \"2022-03-24\",\n      \"fmv_market_code\": \"$__USD\"\n    }\n  ]\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/snapshots?startDate=string&endDate=string&page=3668.277565660176&size=96.93080000552878&order=asc",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "snapshots"
+                  ],
+                  "query": [
+                    {
+                      "key": "startDate",
+                      "value": "string",
+                      "description": "date format YYYY-MM-DD"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "string",
+                      "description": "date format YYYY-MM-DD"
+                    },
+                    {
+                      "key": "page",
+                      "value": "3668.277565660176",
+                      "description": "page number, default 1"
+                    },
+                    {
+                      "key": "size",
+                      "value": "96.93080000552878",
+                      "description": "page size default 100"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc",
+                      "description": "'asc' or 'desc', default 'asc'"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "get Snapshot Info Details",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/snapshots_details?date=string&time=string&mode=asset&cryptoId=8805&type=1",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "snapshots_details"
+              ],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "string",
+                  "description": "snapshot date"
+                },
+                {
+                  "key": "time",
+                  "value": "string",
+                  "description": "snapshot time"
+                },
+                {
+                  "key": "mode",
+                  "value": "asset",
+                  "description": "'asset', 'wallet','connection' or 'derivatives'"
+                },
+                {
+                  "key": "cryptoId",
+                  "value": "8805",
+                  "description": "crypto Id"
+                },
+                {
+                  "key": "type",
+                  "value": "1",
+                  "description": "type - 1: wallets, 2: accounts"
+                }
+              ]
+            },
+            "description": "Get snapshot Info details"
+          },
+          "response": [
+            {
+              "name": "successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/snapshots_details?date=string&time=string&mode=asset&cryptoId=8805&type=1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "snapshots_details"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "string",
+                      "description": "snapshot date"
+                    },
+                    {
+                      "key": "time",
+                      "value": "string",
+                      "description": "snapshot time"
+                    },
+                    {
+                      "key": "mode",
+                      "value": "asset",
+                      "description": "'asset', 'wallet','connection' or 'derivatives'"
+                    },
+                    {
+                      "key": "cryptoId",
+                      "value": "8805",
+                      "description": "crypto Id"
+                    },
+                    {
+                      "key": "type",
+                      "value": "1",
+                      "description": "type - 1: wallets, 2: accounts"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": {\n    \"details\": [\n      {\n        \"connection_name\": \"gemini: ETH\",\n        \"source_id\": 1,\n        \"type\": 1,\n        \"fmv_source\": 1,\n        \"crypto_id\": 1,\n        \"balance\": 1.11,\n        \"fiat_value\": 0.11\n      },\n      {\n        \"connection_name\": \"gemini: ETH\",\n        \"source_id\": 1,\n        \"type\": 1,\n        \"fmv_source\": 1,\n        \"crypto_id\": 1,\n        \"balance\": 1.11,\n        \"fiat_value\": 0.11\n      }\n    ],\n    \"meta\": {\n      \"date\": \"2022-04-07\",\n      \"types\": {\n        \"1\": \"wallet\",\n        \"2\": \"exchange\",\n        \"3\": \"virtual wallet\",\n        \"4\": \"de-fi\"\n      },\n      \"fmv_sources\": {\n        \"1\": \"CryptoCompare\",\n        \"2\": \"CoinGecko\"\n      },\n      \"cryptoSymbols\": {\n        \"1\": {\n          \"symbol\": \"BTC\",\n          \"display_symbol\": \"BTC\",\n          \"name\": \"Bitcoin\"\n        },\n        \"2\": {\n          \"symbol\": \"ETH\",\n          \"display_symbol\": \"ETH\",\n          \"name\": \"Ethereum\"\n        }\n      }\n    },\n    \"defi\": {\n      \"protocols\": {\n        \"Ethereum\": {\n          \"network\": \"string\",\n          \"networkImage\": \"string\",\n          \"protocols\": {\n            \"aave\": {\n              \"protocol_id\": \"Ethereum\",\n              \"total_balance\": 70672.836,\n              \"asset_balance\": 70672.836,\n              \"debt_balance\": 0,\n              \"crypto_name\": \"Ethereum\",\n              \"crypto_image\": \"eth.png\",\n              \"wallet_type_id\": 1,\n              \"protocol_name\": \"Aave\",\n              \"reporting_code\": \"USD\",\n              \"conversion_multiple\": 1,\n              \"protocol_logo\": \"aave.png\"\n            }\n          }\n        }\n      }\n    }\n  }\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/snapshots_details?date=string&time=string&mode=asset&cryptoId=8805&type=1",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "snapshots_details"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "string",
+                      "description": "snapshot date"
+                    },
+                    {
+                      "key": "time",
+                      "value": "string",
+                      "description": "snapshot time"
+                    },
+                    {
+                      "key": "mode",
+                      "value": "asset",
+                      "description": "'asset', 'wallet','connection' or 'derivatives'"
+                    },
+                    {
+                      "key": "cryptoId",
+                      "value": "8805",
+                      "description": "crypto Id"
+                    },
+                    {
+                      "key": "type",
+                      "value": "1",
+                      "description": "type - 1: wallets, 2: accounts"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "get Snapshot Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/snapshots_info?date=string&time=string&mode=connection",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "snapshots_info"
+              ],
+              "query": [
+                {
+                  "key": "date",
+                  "value": "string",
+                  "description": "snapshot date"
+                },
+                {
+                  "key": "time",
+                  "value": "string",
+                  "description": "snapshot time"
+                },
+                {
+                  "key": "mode",
+                  "value": "connection",
+                  "description": "one of value, 'asset' or 'connection'"
+                }
+              ]
+            },
+            "description": "Get snapshot information"
+          },
+          "response": [
+            {
+              "name": "successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/snapshots_info?date=string&time=string&mode=connection",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "snapshots_info"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "string",
+                      "description": "snapshot date"
+                    },
+                    {
+                      "key": "time",
+                      "value": "string",
+                      "description": "snapshot time"
+                    },
+                    {
+                      "key": "mode",
+                      "value": "connection",
+                      "description": "one of value, 'asset' or 'connection'"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": {\n    \"asset\": {\n      \"fiat_value\": 0.11,\n      \"crypto_id\": 1,\n      \"fmv_market_code\": \"$__USD\",\n      \"snapshot_date\": \"2022-04-07\",\n      \"fmv_source\": 1,\n      \"balance\": 333333,\n      \"fmv_value\": 2.56\n    },\n    \"wallets\": {\n      \"hs_wallet_id\": 1,\n      \"cryptoId\": 1,\n      \"source_id\": 1,\n      \"wallet_id\": 1,\n      \"total\": 0.11,\n      \"name\": \"my eth wallet\"\n    },\n    \"exchanges\": {\n      \"exchange_connection_id\": 1,\n      \"total\": 11.111,\n      \"connection_name\": \"gemini account\",\n      \"exchange_name\": \"Gemini\",\n      \"exchange_id\": 8\n    },\n    \"meta\": {\n      \"date\": \"2022-04-07\",\n      \"types\": {\n        \"1\": \"wallet\",\n        \"2\": \"exchange\",\n        \"3\": \"virtual wallet\",\n        \"4\": \"de-fi\"\n      },\n      \"fmv_sources\": {\n        \"1\": \"CryptoCompare\",\n        \"2\": \"CoinGecko\"\n      },\n      \"cryptoSymbols\": {\n        \"1\": {\n          \"symbol\": \"BTC\",\n          \"display_symbol\": \"BTC\",\n          \"name\": \"Bitcoin\"\n        },\n        \"2\": {\n          \"symbol\": \"ETH\",\n          \"display_symbol\": \"ETH\",\n          \"name\": \"Ethereum\"\n        }\n      }\n    }\n  }\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/snapshots_info?date=string&time=string&mode=connection",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "snapshots_info"
+                  ],
+                  "query": [
+                    {
+                      "key": "date",
+                      "value": "string",
+                      "description": "snapshot date"
+                    },
+                    {
+                      "key": "time",
+                      "value": "string",
+                      "description": "snapshot time"
+                    },
+                    {
+                      "key": "mode",
+                      "value": "connection",
+                      "description": "one of value, 'asset' or 'connection'"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Classifications",
+      "item": [
+        {
+          "name": "classifications Add",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/classifications_add",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "classifications_add"
+              ]
+            },
+            "description": "Create classifications for the portfolio . <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/classifications_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "classifications_add"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/classifications_add",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "classifications_add"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "classifications Edit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/classifications_edit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "classifications_edit"
+              ]
+            },
+            "description": "Edit classification in a portfolio . <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/classifications_edit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "classifications_edit"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/classifications_edit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "classifications_edit"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "classifications Delete",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/classifications_delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "classifications_delete"
+              ]
+            },
+            "description": "Delete a classification from the portfolio . <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/classifications_delete",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "classifications_delete"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/classifications_delete",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "classifications_delete"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Classification Assign Txns",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/txns_classification_assign",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "txns_classification_assign"
+              ]
+            },
+            "description": "Assign a classification to a transaction in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/txns_classification_assign",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "txns_classification_assign"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/txns_classification_assign",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "txns_classification_assign"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DeFi",
+      "item": [
+        {
+          "name": "defi Portfolio Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/defi_portfolio_info",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "defi_portfolio_info"
+              ]
+            },
+            "description": "Get portfolio DeFi infomation. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/defi_portfolio_info",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "defi_portfolio_info"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/defi_portfolio_info",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "defi_portfolio_info"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "defi Specific Portfolio Info",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/defi_portfolio_protocol_info",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "defi_portfolio_protocol_info"
+              ]
+            },
+            "description": "Get DeFi protocol specific infomation. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/defi_portfolio_protocol_info",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "defi_portfolio_protocol_info"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/defi_portfolio_protocol_info",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "defi_portfolio_protocol_info"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "defi Portfolio Refresh",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/defi_portfolio_refresh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "defi_portfolio_refresh"
+              ]
+            },
+            "description": "Refresh portfolio DeFi infomation. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/defi_portfolio_refresh",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "defi_portfolio_refresh"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/defi_portfolio_refresh",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "defi_portfolio_refresh"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "defi Portfolio Refresh Hard",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/defi_portfolio_hard_refresh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "defi_portfolio_hard_refresh"
+              ]
+            },
+            "description": "Resync portfolio DeFi infomation. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/defi_portfolio_hard_refresh",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "defi_portfolio_hard_refresh"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/defi_portfolio_hard_refresh",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "defi_portfolio_hard_refresh"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "NFTs",
+      "item": [
+        {
+          "name": "NFT Portfolio All",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/nfts_portfolio_all",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "nfts_portfolio_all"
+              ]
+            },
+            "description": "Get all NFTs in a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nfts_portfolio_all",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nfts_portfolio_all"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nfts_portfolio_all",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nfts_portfolio_all"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "NFT Portfolio Specific",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/nfts_portfolio_specific",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "nfts_portfolio_specific"
+              ]
+            },
+            "description": "Get specific NFT info in a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nfts_portfolio_specific",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nfts_portfolio_specific"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nfts_portfolio_specific",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nfts_portfolio_specific"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "NFT Portfolio Search",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/nfts_portfolio_search",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "nfts_portfolio_search"
+              ]
+            },
+            "description": "Search for NFT info in a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nfts_portfolio_search",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nfts_portfolio_search"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nfts_portfolio_search",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nfts_portfolio_search"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "NFT Portfolio Txns",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/nfts_portfolio_txns",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "nfts_portfolio_txns"
+              ]
+            },
+            "description": "Get all transactions for a NFT in a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nfts_portfolio_txns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nfts_portfolio_txns"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/nfts_portfolio_txns",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "nfts_portfolio_txns"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Labels",
+      "item": [
+        {
+          "name": "portfolio Labels",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/library_labels",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "library_labels"
+              ]
+            },
+            "description": "Get all labels in a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library_labels",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library_labels"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library_labels",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library_labels"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Labels Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/library_labels_create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "library_labels_create"
+              ]
+            },
+            "description": "Create labels in a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library_labels_create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library_labels_create"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library_labels_create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library_labels_create"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Labels Update",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/library_labels_update",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "library_labels_update"
+              ]
+            },
+            "description": "Update labels in a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library_labels_update",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library_labels_update"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library_labels_update",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library_labels_update"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Labels Delete",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/library_labels_delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "library_labels_delete"
+              ]
+            },
+            "description": "Delete labels in a portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library_labels_delete",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library_labels_delete"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/library_labels_delete",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "library_labels_delete"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Txns Label Edit",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/txns_label_edit",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "txns_label_edit"
+              ]
+            },
+            "description": "Edit a transaction's label and description in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/txns_label_edit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "txns_label_edit"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/txns_label_edit",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "txns_label_edit"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Calculations",
+      "item": [
+        {
+          "name": "portfolio Calculate",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/calculation_execute",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "calculation_execute"
+              ]
+            },
+            "description": "Run a calculation (ie: Cost basis, WAC etc) in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/calculation_execute",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "calculation_execute"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/calculation_execute",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "calculation_execute"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Calculate Cancel",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/calculation_cancel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "calculation_cancel"
+              ]
+            },
+            "description": "Cancel a running calculation (ie: Cost basis, WAC etc) in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/calculation_cancel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "calculation_cancel"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/calculation_cancel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "calculation_cancel"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Invoices",
+      "item": [
+        {
+          "name": "portfolio Invoice Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invoice_create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice_create"
+              ]
+            },
+            "description": "Create an invoice in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_create"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_create"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Invoice Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invoices_get",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoices_get"
+              ]
+            },
+            "description": "Get all invoices in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoices_get",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoices_get"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoices_get",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoices_get"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Invoice Get New Id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invoice_next_id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice_next_id"
+              ]
+            },
+            "description": "Get the next invoice Id in the portfolio. Use this id to create the invoice new. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_next_id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_next_id"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_next_id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_next_id"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Invoice Currencies",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invoice_tokens_supported",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice_tokens_supported"
+              ]
+            },
+            "description": "Get a list of supported currencies for invoices in your portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_tokens_supported",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_tokens_supported"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_tokens_supported",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_tokens_supported"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Invoice Accept",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invoice_accept",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice_accept"
+              ]
+            },
+            "description": "Accept an invoice in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_accept",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_accept"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_accept",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_accept"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Invoice Reject",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invoice_reject",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice_reject"
+              ]
+            },
+            "description": "Reject an invoice in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_reject",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_reject"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_reject",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_reject"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Invoice Cancel",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/invoice_cancel",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "invoice_cancel"
+              ]
+            },
+            "description": "Cancel an invoice in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_cancel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_cancel"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/invoice_cancel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "invoice_cancel"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bills",
+      "item": [
+        {
+          "name": "portfolio Bills Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/bills_get",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bills_get"
+              ]
+            },
+            "description": "Get bills in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bills_get",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bills_get"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bills_get",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bills_get"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Bill Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/bill_get",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bill_get"
+              ]
+            },
+            "description": "Get a specific bill in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_get",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_get"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_get",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_get"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Bill Create",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/bill_create",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bill_create"
+              ]
+            },
+            "description": "Create a bill in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_create"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_create"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Bill Confirm",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/bill_confirm",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bill_confirm"
+              ]
+            },
+            "description": "Confirm a bill in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_confirm",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_confirm"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_confirm",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_confirm"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Bill Delete",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/bill_delete",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bill_delete"
+              ]
+            },
+            "description": "Delete a bill in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_delete",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_delete"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_delete",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_delete"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "portfolio Bill Unconfirm",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/bill_unconfirm",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "bill_unconfirm"
+              ]
+            },
+            "description": "Unconfirm a bill in the portfolio. <b>API details secluded for security reasons. Please contact your account manager. <b/>"
+          },
+          "response": [
+            {
+              "name": "successful response, jobs are queued for execution.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_unconfirm",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_unconfirm"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"status\": true,\n  \"data\": true\n}"
+            },
+            {
+              "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-API-KEY",
+                    "value": "string",
+                    "description": "Pass your API KEY here"
+                  },
+                  {
+                    "key": "X-PORTFOLIO-ID",
+                    "value": "8805",
+                    "description": "Pass your portfolio ID"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/bill_unconfirm",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "bill_unconfirm"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Get Crypto Library",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-KEY",
+            "value": "string",
+            "description": "Pass your API KEY here"
+          },
+          {
+            "key": "X-PORTFOLIO-ID",
+            "value": "8805",
+            "description": "Pass your portfolio ID"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/crypto_library?Crypto Id=8805",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "crypto_library"
+          ],
+          "query": [
+            {
+              "key": "Crypto Id",
+              "value": "8805",
+              "description": "Unique identifier for the cryptocurrency"
+            }
+          ]
+        },
+        "description": "Get a list of supported assets and its info."
+      },
+      "response": [
+        {
+          "name": "successful response",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/crypto_library?Crypto Id=8805",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "crypto_library"
+              ],
+              "query": [
+                {
+                  "key": "Crypto Id",
+                  "value": "8805",
+                  "description": "Unique identifier for the cryptocurrency"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n  \"status\": true,\n  \"data\": [\n    \"\",\n    \"\"\n  ]\n}"
+        },
+        {
+          "name": "unauthorized for incorrect API keys, invalid_request for revoked API keys or invalid_headers for missing headers",
+          "originalRequest": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-KEY",
+                "value": "string",
+                "description": "Pass your API KEY here"
+              },
+              {
+                "key": "X-PORTFOLIO-ID",
+                "value": "8805",
+                "description": "Pass your portfolio ID"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/crypto_library?Crypto Id=8805",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "crypto_library"
+              ],
+              "query": [
+                {
+                  "key": "Crypto Id",
+                  "value": "8805",
+                  "description": "Unique identifier for the cryptocurrency"
+                }
+              ]
+            }
+          },
+          "status": "Unauthorized",
+          "code": 401,
+          "_postman_previewlanguage": "text",
+          "header": [],
+          "cookie": [],
+          "body": ""
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "pm.request.headers.upsert({",
+          "    key: 'X-API-KEY',",
+          "    value: pm.environment.get(\"apiKey\")",
+          "})",
+          "",
+          "pm.request.headers.upsert({",
+          "    key: 'X-PORTFOLIO-ID',",
+          "    value: pm.environment.get(\"entityId\")",
+          "})"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.cryptoworth.app/v1"
+    }
+  ]
+}
